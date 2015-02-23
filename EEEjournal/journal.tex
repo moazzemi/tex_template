@@ -1,0 +1,127 @@
+\documentclass[journal]{IEEEtran}
+
+%\hyphenation{ieee transactions on very large scale integration systems}
+\usepackage{graphicx}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage{times}
+\usepackage{microtype}
+\usepackage[UKenglish]{babel}
+\usepackage{graphicx,dblfloatfix}
+\usepackage{blindtext}
+\usepackage{mathtools}
+\usepackage{multirow}
+\usepackage[table]{xcolor}  % 'table' option loads �colortbl�
+\usepackage{graphicx,dblfloatfix}
+\usepackage{subcaption}
+\usepackage{hhline}
+\usepackage{arydshln}
+\usepackage{subcaption}
+\captionsetup{compatibility=false}
+\usepackage{hhline}
+\usepackage{arydshln}
+\usepackage{framed}
+
+
+\newcommand{\figref}[1]{Fig.~\ref{#1}}
+\newcommand{\secref}[1]{Section~\ref{#1}}
+\newcommand{\tabref}[1]{Table~\ref{#1}}
+\newcommand{\chapref}[1]{Chapter~\ref{#1}}
+\newcommand{\appref}[1]{Appendix~\ref{#1}}
+
+\definecolor{red2}{rgb}{0.99,0.80,0.80}
+\definecolor{lightgray}{rgb}{0.9,0.9,0.8}
+\definecolor{lightgray2}{rgb}{1,1,0.6}
+\definecolor{pepper2}{rgb}{0.85,0.75,0.85}
+\definecolor{blue2}{rgb}{0.9,1,1}
+
+
+\begin{document}
+%
+% paper title
+% can use linebreaks \\ within to get better formatting as desired
+% Do not put math or special symbols in the title.
+\title{Title1}
+%
+%
+% author names and IEEE memberships
+% note positions of commas and nonbreaking spaces ( ~ ) LaTeX will not break
+% a structure at a ~ so this keeps an author's name from being broken across
+% two lines.
+% use \thanks{} to gain access to the first footnote area
+% a separate \thanks must be used for each paragraph as LaTeX2e's \thanks
+% was not built to handle multiple paragraphs
+\author{Kasra Moazzemi2		\\kmoazzem@uci.edu\\University of California Irvine}
+
+
+%\author{Hamed~Tabkhi,~\IEEEmembership{Student~Member,~IEEE,}
+%\author{Hamed~Tabkhi,~\IEEEmembership{Student~Member,~IEEE,}
+%        Gunar~Schirner,~\IEEEmembership{Member,~IEEE,}
+%\thanks{Hamed~Tabkhi and Gunar~Schirner are with the Department of Electrical and Computer Engineering, Northeastern %University, Boston, MA, 02115.}
+%\thanks{E-mail: tabkhi@ece.neu.edu, schirner@ece.neu.edu}% <-this % stops a space
+%\thanks{Manuscript received March 1, 2013; revised August 28 and November 1, 2013; accepted November 10, 2013.}}
+
+% note the % following the last \IEEEmembership and also \thanks - 
+% these prevent an unwanted space from occurring between the last author name
+% and the end of the author line. i.e., if you had this:
+% 
+% \author{....lastname \thanks{...} \thanks{...} }
+%                     ^------------^------------^----Do not want these spaces!
+%
+% a space would be appended to the last name and could cause every name on that
+% line to be shifted left slightly. This is one of those "LaTeX things". For
+% instance, "\textbf{A} \textbf{B}" will typeset as "A B" not "AB". To get
+% "AB" then you have to do: "\textbf{A}\textbf{B}"
+% \thanks is no different in this regard, so shield the last } of each \thanks
+% that ends a line with a % and do not let a space in before the next \thanks.
+% Spaces after \IEEEmembership other than the last one are OK (and needed) as
+% you are supposed to have spaces between the names. For what it is worth,
+% this is a minor point as most people would not even notice if the said evil
+% space somehow managed to creep in.
+
+
+
+% The paper headers
+%\markboth{ieee transactions on very large scale integration systems,~Vol.~??, No.~?, ??~2014}%
+%{Shell \MakeLowercase{\textit{et al.}}: Bare Demo of IEEEtran.cls for Journals}
+% make the title area
+\maketitle
+
+% As a general rule, do not put math, special symbols or citations
+% in the abstract or keywords.
+
+\begin{abstract}
+\input{main_text/Abstract}
+\end{abstract}
+
+\begin{IEEEkeywords}
+Keywords3
+\end{IEEEkeywords}
+
+
+\input{main_text/Introduction}
+%\input{main_text/Survey}
+
+%\input{main_text/Conclusion}
+
+% Note that keywords are not normally used for peerreview papers.
+
+
+
+\IEEEpeerreviewmaketitle
+
+%\input{main_text/introduction}
+
+
+%\begin{appendices}
+
+
+%\input{materials/Kasra}
+%\end{appendices}
+
+
+\bibliographystyle{IEEEtran}
+\bibliography{ref}
+
+
+\end{document}

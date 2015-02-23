@@ -1,0 +1,161 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% $Id: macros.tex 4 2010-05-28 03:32:24Z schirner $
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% General macros
+% for NSF proposal
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% modifications: (most recent first)
+%
+
+% include basic packages
+\usepackage{times,amsmath,amssymb,graphicx,amsbsy}%,subfigure,url}
+
+
+%\graphicspath{
+%                {FIGURES/}
+%              }
+
+
+% ----------------------------------------------------------------- %
+% Debugging/draft
+% ----------------------------------------------------------------- %
+\newcommand{\REM}[1]{\textbf{[ \textit{#1} ]}}
+\newcommand{\REMP}[1]{\medskip\noindent\textbf{[ \textit{#1} ]}\medskip}
+\newcommand{\MREM}[1]{\marginpar{\tiny\raggedright #1}}
+
+
+
+% useful packages
+\usepackage{times}
+\usepackage{mathptmx}
+\usepackage{url}
+\usepackage{subfigure}
+\usepackage{epsfig}
+%\usepackage{clrscode}
+%\usepackage{multirow}
+
+% figures with text wrapped around
+\usepackage{wrapfig}
+
+% for the layer table in Background_NoC.tex
+\usepackage{multirow}
+
+
+% set standard widths for figures
+\newlength{\figurewidth}
+\setlength{\figurewidth}{\textwidth}
+\addtolength{\figurewidth}{-1.0\columnsep}
+\setlength{\figurewidth}{.5\figurewidth}
+\newlength{\widefigurewidth}
+\setlength{\widefigurewidth}{\textwidth}
+\newlength{\subfigurewidth}
+\setlength{\subfigurewidth}{0.53\figurewidth}
+
+% reference macros (capitals!)
+\newcommand{\figref}[1]{Fig.~\ref{#1}}
+\newcommand{\secref}[1]{Section~\ref{#1}}
+\newcommand{\tabref}[1]{Table~\ref{#1}}
+\newcommand{\chapref}[1]{Chapter~\ref{#1}}
+\newcommand{\appref}[1]{Appendix~\ref{#1}}
+
+% macro for commenting
+\newcommand{\comment}[1]{}
+\newcommand{\ifyes}[1]{#1}
+\newcommand{\ifno}[1]{}
+% adjustable text size
+%\newcommand{\ifmaybe}[1]{#1}	% turn maybe-texts on
+\newcommand{\ifmaybe}[1]{}	% turn maybe-texts off
+%\newcommand{\ifmore}[1]{#1}	% turn more-texts on
+\newcommand{\ifmore}[1]{}	% turn more-texts off
+
+% index macros (disabled)
+\newcommand{\myindex}[1]{}
+
+
+% controlled white spaces
+\newcommand{\upline}{\vspace*{-\baselineskip}}
+\newcommand{\up}{\vspace*{-6pt}}
+\newcommand{\downline}{\vspace*{\baselineskip}}
+\newcommand{\down}{\vspace*{6pt}}
+\newcommand{\sep}{~~~~~~~~~~}
+
+%% Reduce the space above and below a caption
+%\addtolength{\abovecaptionskip}{-.5\abovecaptionskip}
+%\addtolength{\belowcaptionskip}{-.5\belowcaptionskip}
+
+
+% others...
+%	\newif\ifpdf
+%	\ifx\pdfoutput\undefined
+%	\pdffalse % we are not running PDFLaTeX
+%	\else
+%	\pdfoutput=1 % we are running PDFLaTeX
+%	\pdftrue
+%	\fi
+%	\ifpdf
+%	\usepackage[pdftex]{graphicx}
+%	\else
+%	\usepackage{epsfig}
+%	\usepackage{graphicx}
+%	\fi
+%	
+%	\ifpdf
+%	\DeclareGraphicsExtensions{.pdf, .jpg, .tif}
+%	\else
+%	\DeclareGraphicsExtensions{.eps, .jpg}
+%	\fi
+%	
+%	\newcommand{\igc}[2]{\includegraphics[width=#1\columnwidth]{#2}}
+
+
+% ------------------ definitions for title authors
+% title
+\def\TitleDef#1{\def\titleRef{#1}}
+\title{\titleRef} % don't know if already defined
+
+% author(s) of the report
+\def\AuthorDef#1{\def\authorRef{#1}}
+\author{\authorRef}
+
+% keywords
+\def\KeywordDef#1{\def\keywordRef{#1}}
+
+% subject (like subtitle)
+\def\SubjectDef#1{\def\subjectRef{#1}}
+
+
+% ----------------------------------------------------------------- %
+% Getting sections right (NSF)
+
+\setcounter{tocdepth}{2}
+\setcounter{secnumdepth}{3}
+% Commented out def's below to get regular numbered outline
+%\renewcommand{\thepart}{\Roman{part}.}
+%\renewcommand{\thesection}{\Alph{section}}
+%\renewcommand{\thesection}{\Alph{section}}
+
+% remove text for references, and since it would print a
+% new line anyway, vspace it away
+\renewcommand\refname{\vspace{-16pt}}
+
+
+% selectively compress itemize enumerate and such
+\newcommand{\compressItemList}{
+	\
+	\setlength{\itemsep}{1pt}
+	\setlength{\parskip}{0pt}
+  \setlength{\parsep}{0pt}
+}
+
+% space squeezers
+\usepackage{mdwlist}
+
+% shrink down list spaces
+\newcommand{\listSqStart}{\vspace*{-0.6em}}
+\newcommand{\listSqEnd}{\vspace*{-0.6em}}
+
+
+% EOF
